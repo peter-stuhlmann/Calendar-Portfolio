@@ -95,7 +95,7 @@ export default function VariantsTable({
           </li>
         ))}
       </ul>
-      <p>* Die Preise können je nach Händler abweichen.</p>
+      <p>* Lorem ipsum dolor sit amet, consetetur sadipscing.</p>
     </Container>
   );
 }
