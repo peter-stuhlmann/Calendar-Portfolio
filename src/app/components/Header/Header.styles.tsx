@@ -23,5 +23,20 @@ export const Container = styled.header`
     text-decoration: none;
     color: inherit;
     text-align: center;
+
+    svg {
+      height: 60px;
+
+      @media (max-width: 480px) {
+        height: 30px;
+      }
+
+      .fill {
+        fill: #fab439;
+      }
+      .outline {
+        fill: #1d1d1b;
+      }
+    }
   }
 `;
