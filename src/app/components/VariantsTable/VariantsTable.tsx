@@ -8,6 +8,7 @@ import ExternalLink from '../icons/ExternalLink';
 import formatISBN from '@/app/utils/formatISBN';
 
 const PARTNER_TAG = process.env.NEXT_PUBLIC_PARTNER_TAG;
+const THALIA_AFFILIATE_LINK = process.env.NEXT_PUBLIC_THALIA_AFFILIATE_LINK;
 
 export default function VariantsTable({
   variants,
@@ -79,7 +80,7 @@ export default function VariantsTable({
               {variant.thalia && (
                 <div>
                   <Link
-                    href={variant.thalia}
+                    href={`${THALIA_AFFILIATE_LINK}${variant.thalia}`}
                     aria-label="Externer Link zu Thalia"
                     target="_blank"
                     rel="referrer noopener"
@@ -95,7 +96,7 @@ export default function VariantsTable({
           </li>
         ))}
       </ul>
-      <p>* Lorem ipsum dolor sit amet, consetetur sadipscing.</p>
+      <p>* Die Preise können je nach Händler abweichen.</p>
     </Container>
   );
 }
