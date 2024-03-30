@@ -13,8 +13,8 @@ const baseUrl = 'https://example.com';
 // Function to create the sitemap
 const createSitemap = (products) => {
   let sitemapContent = '<?xml version="1.0" encoding="UTF-8"?>\n';
-  sitemapContent +=
-    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
+  sitemapContent += `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n`;
 
   // Find the newest published date among products
   const newestDate = products.reduce((latest, product) => {
@@ -27,10 +27,10 @@ const createSitemap = (products) => {
 
   // Adding the homepage with the newest publication date
   sitemapContent += `  <url>
-  <loc>${baseUrl}/</loc>
-  <lastmod>${formattedNewestDate}</lastmod>
-  <priority>1.0</priority>
-</url>\n`;
+    <loc>${baseUrl}/</loc>
+    <lastmod>${formattedNewestDate}</lastmod>
+    <priority>1.0</priority>
+  </url>\n`;
 
   // Adding the product pages
   products.forEach((product) => {
@@ -42,7 +42,7 @@ const createSitemap = (products) => {
     <lastmod>${formattedDate}</lastmod>
     <priority>0.5</priority>
     <image:image>
-      <image:loc>${baseUrl}/${product.id}_0.jpg</image:loc>
+      <image:loc>${baseUrl}/img/${product.id}_0.jpg</image:loc>
       <image:title>${product.title}</image:title>
       <image:caption>${product.shortDescription}</image:caption>
     </image:image>
