@@ -1,18 +1,18 @@
 import styled from 'styled-components';
 
 export const Container = styled.header`
-  background-color: #fff;
-  color: #000;
+  background-color: rgb(255, 255, 255);
+  color: rgb(29, 29, 27);
   height: 100px;
-  padding: 20px;
+  padding: 0 20px;
   box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: center;
 
   @media (max-width: 480px) {
-    height: 50px;
-    padding: 10px;
+    height: 60px;
+    padding: 0 10px;
   }
 
   @media print {
@@ -25,18 +25,35 @@ export const Container = styled.header`
     text-align: center;
 
     svg {
-      height: 60px;
+      width: 335px;
 
       @media (max-width: 480px) {
-        height: 30px;
+        width: 200px;
       }
 
       .fill {
-        fill: #fab439;
+        fill: rgb(250, 180, 57);
       }
       .outline {
-        fill: #1d1d1b;
+        fill: rgb(29, 29, 27);
       }
+
+      /* g {
+        transform: translate(-5px, -50px);
+
+        .white {
+          fill: rgb(255, 255, 255);
+        }
+        .white-shade {
+          fill: rgb(224, 224, 224);
+        }
+        .red {
+          fill: rgb(255, 0, 0);
+        }
+        .red-shade {
+          fill: rgb(155, 10, 9);
+        }
+      } */
     }
   }
 `;
