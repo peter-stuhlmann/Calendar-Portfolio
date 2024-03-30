@@ -13,7 +13,7 @@ const inter = Inter({
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL as string;
 
-const title = 'Kalender 2025 | Peter R. Stuhlmann';
+const title = 'Kalender 2025 von Peter R. Stuhlmann | kalender.lol';
 const description =
   'Hochwertige Kalender für 2025 in den Formaten A5, A4, A3 und A2 über jeden Buchhandel bestellbar.';
 
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     type: 'website',
     title: title,
     description: description,
-    siteName: 'Kalender von Peter Stuhlmann',
+    siteName: 'Kalender von Peter R. Stuhlmann | kalender.lol',
     images: [
       {
         url: `/img/kalender.jpg`,

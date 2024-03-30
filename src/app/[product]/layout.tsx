@@ -25,8 +25,7 @@ export async function generateMetadata({
 
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL as string;
 
-  const title =
-    metaData?.title || 'Error 404' + ' | Kalender von Peter Stuhlmann';
+  const title = metaData?.title || 'Error 404' + ' | kalender.lol';
   const description = metaData?.shortDescription;
 
   return {
@@ -37,7 +36,7 @@ export async function generateMetadata({
       type: 'website',
       title: title,
       description: description,
-      siteName: 'Kalender von Peter Stuhlmann',
+      siteName: 'kalender.lol',
       images: [
         {
           url: `/img/${metaData?.id}_0.jpg`,
