@@ -41,7 +41,7 @@ export type SharingButton = {
 
 export type CookieConsent = {
   heading: string;
-  text: string;
+  text: string[];
   privacyPolicyText: string;
   privacyPolicy: string;
   privacyPolicyUrl: string;

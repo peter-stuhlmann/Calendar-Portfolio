@@ -29,7 +29,9 @@ export default function CookieBanner({
     <Backdrop>
       <Container>
         <Heading>{cookieConsent.heading}</Heading>
-        <Text>{cookieConsent.text}</Text>
+        {cookieConsent.text.map((t: string) => (
+          <Text key={t}>{t}</Text>
+        ))}
         <Text $small>
           {cookieConsent.privacyPolicyText}{' '}
           <Link

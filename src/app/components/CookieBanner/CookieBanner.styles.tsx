@@ -29,6 +29,16 @@ export const Container = styled.aside`
     transform: translate(calc(50% + 10px), -50%);
   }
 
+  p {
+    @media (max-width: 480px) {
+      font-size: 0.9em;
+    }
+
+    @media (max-width: 330px) {
+      font-size: 0.8em;
+    }
+  }
+
   div {
     display: flex;
     align-items: center;
@@ -45,7 +55,11 @@ export const Heading = styled.span`
 `;
 
 export const Text = styled.p<{ $small?: boolean }>`
-  ${(p) => p.$small && `font-size: 0.8em; margin: -10px 0 20px 0;`}
+  ${(p) => p.$small && `font-size: 0.8em; margin: 10px 0 20px 0;`}
+
+  @media (max-width: 480px) {
+    ${(p) => p.$small && `margin: 10px 0 20px 0;`}
+  }
 
   a {
     color: inherit;
