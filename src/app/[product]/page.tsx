@@ -58,33 +58,37 @@ export default function Detailpage({
 
   return (
     <Container>
-      <Heading>Kalender {product && <>&quot;{product.title}&quot;</>}</Heading>
-      {product && (
-        <ShortDescription>{product.shortDescription}</ShortDescription>
-      )}
-      <MainSlider slides={images} />
-      <Description>
-        <h3>Produktbeschreibung:</h3> {product?.description}
-      </Description>
-      {product && product.year <= currentYear && (
-        <Note
-          content={`Dieser Kalender ist aktuell nur für ${
-            product.year
-          } verfügbar. Die ${
-            currentYear + 1
-          }er Version wird vorraussichtlich ab April/Mai erhältlich sein.`}
-        />
-      )}
-      {product && <VariantsTable variants={product.variants} />}
-      {product && (
-        <SharingButtons
-          heading="Teile diesen Kalender"
-          title={product.title}
-          text={product.shortDescription}
-          url={process.env.NEXT_PUBLIC_BASE_URL + '/' + product.slug}
-        />
-      )}
-      {product && <CalendarCarousel excludeProductId={product.id} />}
+      <div>
+        <Heading>
+          Kalender {product && <>&quot;{product.title}&quot;</>}
+        </Heading>
+        {product && (
+          <ShortDescription>{product.shortDescription}</ShortDescription>
+        )}
+        <MainSlider slides={images} />
+        <Description>
+          <h3>Produktbeschreibung:</h3> {product?.description}
+        </Description>
+        {product && product.year <= currentYear && (
+          <Note
+            content={`Dieser Kalender ist aktuell nur für ${
+              product.year
+            } verfügbar. Die ${
+              currentYear + 1
+            }er Version wird vorraussichtlich ab April/Mai erhältlich sein.`}
+          />
+        )}
+        {product && <VariantsTable variants={product.variants} />}
+        {product && (
+          <SharingButtons
+            heading="Teile diesen Kalender"
+            title={product.title}
+            text={product.shortDescription}
+            url={process.env.NEXT_PUBLIC_BASE_URL + '/' + product.slug}
+          />
+        )}
+        {product && <CalendarCarousel excludeProductId={product.id} />}
+      </div>
     </Container>
   );
 }
