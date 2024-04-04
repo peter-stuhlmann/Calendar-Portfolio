@@ -71,7 +71,7 @@ export default function VariantsTable({
                     }`}
                     aria-label="Externer Link zu Amazon"
                     target="_blank"
-                    rel="referrer noopener"
+                    rel="noopener sponsored"
                   >
                     Amazon <ExternalLink aria-hidden="true" />
                   </Link>
@@ -83,7 +83,7 @@ export default function VariantsTable({
                     href={`${THALIA_AFFILIATE_LINK}${variant.thalia}`}
                     aria-label="Externer Link zu Thalia"
                     target="_blank"
-                    rel="referrer noopener"
+                    rel="noopener sponsored"
                   >
                     Thalia <ExternalLink aria-hidden="true" />
                   </Link>
@@ -96,7 +96,10 @@ export default function VariantsTable({
           </li>
         ))}
       </ul>
-      <p>* Die Preise können je nach Händler abweichen.</p>
+      <p>
+        * Kalender unterliegen nicht der Buchpreisbindung. Die Preise können
+        daher je nach Händler abweichen.
+      </p>
     </Container>
   );
 }

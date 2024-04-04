@@ -29,6 +29,7 @@ export type LinkType = {
 
 export type Footer = {
   copyright: LinkType;
+  developer: LinkType;
   links: LinkType[];
 };
 
@@ -64,4 +65,9 @@ export type InfoBoxProps = {
     heading: string;
     links: LinkType[];
   };
+};
+
+export type TextPage = {
+  heading: string;
+  text: string[];
 };

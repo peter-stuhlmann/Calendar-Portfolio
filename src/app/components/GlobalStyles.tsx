@@ -10,9 +10,15 @@ const GlobalStyles = createGlobalStyle`
     flex-direction: column;
     justify-content: space-between;
     min-height: 100vh;
+    overflow-x: hidden;
 
     @media print {
       background-color: transparent;
+    }
+
+    & > div {
+      overflow-x: hidden;
+      flex: 1;
     }
   }
 `;

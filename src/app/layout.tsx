@@ -15,7 +15,7 @@ const baseUrl = process.env.NEXT_PUBLIC_BASE_URL as string;
 
 const title = 'Kalender 2025 von Peter R. Stuhlmann | kalender.lol';
 const description =
-  'Hochwertige Kalender für 2025 in den Formaten A5, A4, A3 und A2 über jeden Buchhandel bestellbar.';
+  'Hochwertige Kalender für 2025 in den Formaten A5, A4, A3 und A2 über jeden Buchhandel bestellbar. Erstellt mit KI und Fotos von Peter Stuhlmann.';
 
 export const metadata: Metadata = {
   title: title,

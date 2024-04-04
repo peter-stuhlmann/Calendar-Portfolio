@@ -9,6 +9,7 @@ import footer from '@/app/data/footer';
 import { Container } from './Footer.styles';
 import { LinkType } from '@/app/types';
 import CookieBanner from '../CookieBanner';
+import Heart from '../icons/HeartIcon';
 
 const COOKIE_DURATION = 30; // days
 
@@ -52,11 +53,20 @@ export default function Footer(): React.JSX.Element {
       )}
       {isTrackingEnabled && <GoogleAnalytics />}
       <Container>
-        <Link href={footer.copyright.href} target="_blank">
+        <Link href={footer.copyright.href}>
           {footer.copyright.title}, 2024{' '}
           {currentYear > 2024 && <>- {currentYear}</>}
         </Link>
         <ul>
+          <li>
+            <Link
+              href={footer.developer.href}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Entwickelt mit <Heart /> von {footer.developer.title}
+            </Link>
+          </li>
           {isCookieEvaluated && (
             <li onClick={() => handleTracking(!isTrackingEnabled)}>
               <span>
@@ -71,9 +81,7 @@ export default function Footer(): React.JSX.Element {
 
           {footer.links.map((link: LinkType) => (
             <li key={link.href}>
-              <Link href={link.href} target="_blank">
-                {link.title}
-              </Link>
+              <Link href={link.href}>{link.title}</Link>
             </li>
           ))}
         </ul>

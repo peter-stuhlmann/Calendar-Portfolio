@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 
-export const Container = styled.main`
+export const Container = styled.main<{ $textAlign?: string }>`
   padding: 60px 20px 20px 20px;
   box-sizing: border-box;
   position: relative;
   max-width: 1000px;
   margin: 0 auto;
-  text-align: center;
+  text-align: ${(p) => (p.$textAlign ? p.$textAlign : 'center')};
 
   @media (max-width: 480px) {
     padding: 30px 10px;
@@ -20,12 +20,31 @@ export const Container = styled.main`
     display: inline-block;
     max-width: 100%;
   }
+
+  h2 {
+    margin: 60px 0 40px 0;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: -30px;
+      width: calc(100% + 30px);
+      height: 4px;
+      background-color: rgb(250, 180, 57);
+    }
+  }
 `;
 
 export const ShortDescription = styled.h2`
   font-weight: bold;
   margin-bottom: 50px;
   font-size: 1em;
+
+  &::after {
+    display: none;
+  }
 
   a {
     color: inherit;
