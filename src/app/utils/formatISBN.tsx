@@ -1,4 +1,4 @@
-export default function formatISBN(input: string): string {
+const formatISBN = (input: string): string => {
   if (input.length !== 13) {
     throw new Error(
       'Input string does not have the expected length of 13 characters.'
@@ -12,4 +12,6 @@ export default function formatISBN(input: string): string {
   const part5 = input.slice(12);
 
   return `${part1}-${part2}-${part3}-${part4}-${part5}`;
-}
+};
+
+export default formatISBN;

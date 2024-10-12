@@ -1,15 +1,12 @@
 import type { Metadata, Viewport } from 'next';
-import { Inter } from 'next/font/google';
+import { ReactNode } from 'react';
 
 import StyledComponentsRegistry from './registry';
 import GlobalStyles from './components/GlobalStyles';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
-const inter = Inter({
-  subsets: ['latin'],
-  display: 'swap',
-});
+import { primaryFont } from './assets/fonts';
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL as string;
 
@@ -41,23 +38,23 @@ export const viewport: Viewport = {
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: ReactNode;
 }>) {
   return (
-    <html lang="de">
-      <head>
-        <link rel="preconnect" href="https://google-analytics.com" />
-      </head>
-      <StyledComponentsRegistry>
-        <GlobalStyles />
-        <body className={inter.className}>
+    <StyledComponentsRegistry>
+      <GlobalStyles />
+      <html lang="de">
+        <head>
+          <link rel="preconnect" href="https://google-analytics.com" />
+        </head>
+        <body className={`${primaryFont.variable}`}>
           <div>
             <Header />
             {children}
           </div>
           <Footer />
         </body>
-      </StyledComponentsRegistry>
-    </html>
+      </html>
+    </StyledComponentsRegistry>
   );
 }

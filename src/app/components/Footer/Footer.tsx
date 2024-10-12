@@ -17,7 +17,7 @@ const GoogleAnalytics = dynamic(() => import('@/app/utils/analytics'), {
   ssr: false,
 });
 
-export default function Footer(): React.JSX.Element {
+const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const [isTrackingEnabled, setIsTrackingEnabled] = useState<boolean>(false);
@@ -88,4 +88,6 @@ export default function Footer(): React.JSX.Element {
       </Container>
     </>
   );
-}
+};
+
+export default Footer;

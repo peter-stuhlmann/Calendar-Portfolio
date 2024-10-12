@@ -1,13 +1,12 @@
-'use client';
-
 import Link from 'next/link';
 import Image from 'next/image';
+import { FC } from 'react';
 
 import { Container, Contact } from './InfoBox.styles';
 import infoBox from '@/app/data/infoBox';
 import { LinkType } from '../../types';
 
-export default function InfoBox(): React.JSX.Element {
+const InfoBox: FC = () => {
   return (
     <Container aria-label={infoBox.ariaLabel}>
       <Image
@@ -42,4 +41,6 @@ export default function InfoBox(): React.JSX.Element {
       </div>
     </Container>
   );
-}
+};
+
+export default InfoBox;

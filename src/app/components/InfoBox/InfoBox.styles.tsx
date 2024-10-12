@@ -1,3 +1,5 @@
+'use client';
+
 import styled from 'styled-components';
 
 export const Container = styled.section`
@@ -22,11 +24,11 @@ export const Container = styled.section`
   img {
     border-radius: 10px;
     margin-right: 20px;
+    height: auto;
+    object-fit: cover;
 
     @media (max-width: 768px) {
       width: 150px;
-      height: auto;
-      object-fit: cover;
     }
 
     @media (max-width: 480px) {

@@ -1,11 +1,9 @@
-'use client';
-
+import { FC } from 'react';
 import { Container } from './Note.styles';
+import { NoteProps } from './Note.types';
 
-export default function Note({
-  content,
-}: {
-  content: string;
-}): React.JSX.Element {
+const Note: FC<NoteProps> = ({ content }) => {
   return <Container>{content}</Container>;
-}
+};
+
+export default Note;

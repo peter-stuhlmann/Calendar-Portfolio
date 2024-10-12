@@ -1,9 +1,9 @@
-'use client';
+import { FC } from 'react';
 
 import { Container, Heading } from '../page.styles';
 import privacyPolicy from '@/app/data/privacy-policy';
 
-export default function PrivacyPolicyPage(): React.JSX.Element {
+const PrivacyPolicyPage: FC = () => {
   return (
     <Container $textAlign="left">
       <div>
@@ -17,4 +17,6 @@ export default function PrivacyPolicyPage(): React.JSX.Element {
       </div>
     </Container>
   );
-}
+};
+
+export default PrivacyPolicyPage;

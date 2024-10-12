@@ -1,4 +1,4 @@
-'use client';
+import { FC } from 'react';
 
 import HeroSlider from './components/HeroSlider';
 import InfoBox from './components/InfoBox';
@@ -6,7 +6,7 @@ import ProductGrid from './components/ProductGrid';
 import SharingButtons from './components/SharingButtons';
 import { Container, Heading } from './page.styles';
 
-export default function Home(): React.JSX.Element {
+const HomePage: FC = () => {
   return (
     <Container>
       <HeroSlider />
@@ -25,4 +25,6 @@ export default function Home(): React.JSX.Element {
       </div>
     </Container>
   );
-}
+};
+
+export default HomePage;

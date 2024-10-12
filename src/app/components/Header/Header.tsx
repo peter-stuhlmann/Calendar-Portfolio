@@ -1,10 +1,9 @@
-'use client';
-
 import Link from 'next/link';
+
 import { Container } from './Header.styles';
 import Logo from '../Logo';
 
-export default function Header(): React.JSX.Element {
+const Header = () => {
   return (
     <Container>
       <Link href="/" aria-label="Gehe zurück zur Startseite">
@@ -12,4 +11,6 @@ export default function Header(): React.JSX.Element {
       </Link>
     </Container>
   );
-}
+};
+
+export default Header;

@@ -1,4 +1,6 @@
-export default function Logo(): React.JSX.Element {
+import { FC } from 'react';
+
+const Logo: FC = () => {
   return (
     <svg viewBox="0 -50 907.05 217.47">
       <path
@@ -152,4 +154,6 @@ export default function Logo(): React.JSX.Element {
       </g> */}
     </svg>
   );
-}
+};
+
+export default Logo;

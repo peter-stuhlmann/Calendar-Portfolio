@@ -1,17 +1,17 @@
 'use client';
 
+import { FC } from 'react';
+
 import Image from 'next/image';
 import Slider from 'react-slick';
+import Link from 'next/link';
+
 import products from '@/app/data/products';
 import { Product } from '@/app/types';
 import { Carousel } from './CalendarCarousel.styles';
-import Link from 'next/link';
+import { CalendarCarouselProps } from './CalendarCarousel.types';
 
-export default function CalendarCarousel({
-  excludeProductId,
-}: {
-  excludeProductId: string;
-}): React.JSX.Element {
+const CalendarCarousel: FC<CalendarCarouselProps> = ({ excludeProductId }) => {
   const settings = {
     infinite: true,
     speed: 500,
@@ -42,7 +42,7 @@ export default function CalendarCarousel({
           <div key={product.id}>
             <Link href={`/${product.slug}`}>
               <Image
-                src={`/img/${product.id}_0.jpg`}
+                src={`/img/${product.year}/${product.id}_0.jpg`}
                 alt={product.title}
                 width={300}
                 height={212}
@@ -56,4 +56,6 @@ export default function CalendarCarousel({
       </Slider>
     </Carousel>
   );
-}
+};
+
+export default CalendarCarousel;

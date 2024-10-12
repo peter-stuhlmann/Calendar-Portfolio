@@ -1,9 +1,9 @@
-'use client';
+import { FC } from 'react';
 
 import { Container, Heading } from '../page.styles';
 import legalNotice from '@/app/data/legal-notice';
 
-export default function LegalNoticePage(): React.JSX.Element {
+const LegalNoticePage: FC = () => {
   return (
     <Container $textAlign="left">
       <div>
@@ -17,4 +17,6 @@ export default function LegalNoticePage(): React.JSX.Element {
       </div>
     </Container>
   );
-}
+};
+
+export default LegalNoticePage;

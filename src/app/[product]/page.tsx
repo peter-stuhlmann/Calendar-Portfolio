@@ -39,7 +39,7 @@ export default function Detailpage({
       images.push(
         <div key={product.id + i}>
           <Image
-            src={`/img/${product.id}_${i}.jpg`}
+            src={`/img/${product.year}/${product.id}_${i}.jpg`}
             alt={`${product.title} - ${monthNames[i]}`}
             width={product.orientation === 'landscape' ? 640 : 452}
             height={product.orientation === 'landscape' ? 452 : 640}

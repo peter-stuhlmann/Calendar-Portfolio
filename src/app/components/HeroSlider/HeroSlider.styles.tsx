@@ -1,9 +1,15 @@
+'use client';
+
 import styled from 'styled-components';
 
 export const HeroSliderContainer = styled.section`
   .slick-slider {
     width: 100%;
     height: 100%;
+
+    & > button {
+      display: none !important;
+    }
 
     .slick-slide {
       box-sizing: border-box;

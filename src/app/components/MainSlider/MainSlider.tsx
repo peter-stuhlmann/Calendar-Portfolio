@@ -1,14 +1,10 @@
-'use client';
-
+import { FC } from 'react';
 import Slider from 'react-slick';
 
 import { SliderContainer } from './MainSlider.styles';
+import { MainSliderProps } from './MainSlider.types';
 
-export default function MainSlider({
-  slides,
-}: {
-  slides: any[];
-}): React.JSX.Element {
+const MainSlider: FC<MainSliderProps> = ({ slides }) => {
   const settings = {
     dots: true,
     infinite: true,
@@ -24,4 +20,6 @@ export default function MainSlider({
       <Slider {...settings}>{slides}</Slider>
     </SliderContainer>
   );
-}
+};
+
+export default MainSlider;

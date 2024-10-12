@@ -11,6 +11,7 @@ const GlobalStyles = createGlobalStyle`
     justify-content: space-between;
     min-height: 100vh;
     overflow-x: hidden;
+    font-family: var(--primary-font), sans-serif;
 
     @media print {
       background-color: transparent;

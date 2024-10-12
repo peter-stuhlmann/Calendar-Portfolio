@@ -1,13 +1,20 @@
 export type Variant = {
   isbn: string;
-  format: 'a5' | 'a4' | 'a3' | 'a2' | 'a2p';
+  format: 'a5' | 'a4' | 'a3' | 'a2' | 'a2p' | 'fam';
   price: number;
   amazon: string;
   thalia: string;
 };
 
+export type Archive = {
+  year: number;
+  id: string;
+  variants: Variant[];
+};
+
 export type Product = {
   id: string;
+  archive?: Archive[];
   title: string;
   slug: string;
   shortDescription: string;
@@ -18,6 +25,7 @@ export type Product = {
   published: string;
   year: number;
   note?: string;
+  sales: number;
   variants: Variant[];
 };
 

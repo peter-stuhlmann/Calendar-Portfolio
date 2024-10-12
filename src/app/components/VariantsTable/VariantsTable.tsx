@@ -1,20 +1,16 @@
-'use client';
-
 import Link from 'next/link';
+import { FC } from 'react';
 
 import { Container } from './VariantsTable.styles';
 import { Variant } from '@/app/types';
 import ExternalLink from '../icons/ExternalLink';
 import formatISBN from '@/app/utils/formatISBN';
+import { VariantsTableProps } from './VariantsTable.types';
 
 const PARTNER_TAG = process.env.NEXT_PUBLIC_PARTNER_TAG;
 const THALIA_AFFILIATE_LINK = process.env.NEXT_PUBLIC_THALIA_AFFILIATE_LINK;
 
-export default function VariantsTable({
-  variants,
-}: {
-  variants: Variant[];
-}): React.JSX.Element {
+const VariantsTable: FC<VariantsTableProps> = ({ variants }) => {
   const price = (price: number) => {
     return price.toString().replace('.', ',');
   };
@@ -33,6 +29,8 @@ export default function VariantsTable({
         return 'DIN A2 Wand';
       case 'a2p':
         return 'DIN A2 Premium';
+      case 'fam':
+        return 'Familienplaner';
       default:
         return '';
     }
@@ -102,4 +100,6 @@ export default function VariantsTable({
       </p>
     </Container>
   );
-}
+};
+
+export default VariantsTable;

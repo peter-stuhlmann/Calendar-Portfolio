@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { ReactNode } from 'react';
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL as string;
 
@@ -23,10 +24,10 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default function PrivacyPolicyLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
   return children;
 }

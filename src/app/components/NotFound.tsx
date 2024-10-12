@@ -5,28 +5,32 @@ import { Container, Heading, ShortDescription } from '../page.styles';
 import Image from 'next/image';
 import styled from 'styled-components';
 
-export default function NotFound() {
+const NotFound = () => {
   return (
     <Container>
-      <Heading>Diesen Kalender gibt es nicht (mehr)</Heading>
-      <ShortDescription>
-        Aber es gibt viele andere <Link href="/">hier</Link>.
-      </ShortDescription>
-      <Image
-        src={`/img/404.jpg`}
-        alt={'404'}
-        width={640}
-        height={360}
-        sizes="(min-width: 1100px) 640px, (min-width: 680px) 600px, (min-width: 500px) 420px, (min-width: 400px) 380px, 280px"
-        priority
-        style={{ maxWidth: '100%', height: 'auto' }}
-      />
-      <Button>
-        <Link href="/">Zurück zur Startseite</Link>
-      </Button>
+      <div>
+        <Heading>Diesen Kalender gibt es nicht (mehr)</Heading>
+        <ShortDescription>
+          Aber es gibt viele andere <Link href="/">hier</Link>.
+        </ShortDescription>
+        <Image
+          src={`/img/404.jpg`}
+          alt={'404'}
+          width={640}
+          height={360}
+          sizes="(min-width: 1100px) 640px, (min-width: 680px) 600px, (min-width: 500px) 420px, (min-width: 400px) 380px, 280px"
+          priority
+          style={{ maxWidth: '100%', height: 'auto' }}
+        />
+        <Button>
+          <Link href="/">Zurück zur Startseite</Link>
+        </Button>
+      </div>
     </Container>
   );
-}
+};
+
+export default NotFound;
 
 const Button = styled.div`
   display: flex;

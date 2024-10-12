@@ -1,6 +1,8 @@
 'use client';
 
 import Link from 'next/link';
+import { FC, useEffect } from 'react';
+
 import {
   Accept,
   Backdrop,
@@ -9,14 +11,10 @@ import {
   Heading,
   Text,
 } from './CookieBanner.styles';
-import { useEffect } from 'react';
 import cookieConsent from '@/app/data/cookieConsent';
+import { CookieBannerProps } from './CookieBanner.types';
 
-export default function CookieBanner({
-  handleTracking,
-}: {
-  handleTracking: (value: boolean) => void;
-}): React.JSX.Element {
+const CookieBanner: FC<CookieBannerProps> = ({ handleTracking }) => {
   useEffect(() => {
     document.body.style.overflow = 'hidden';
 
@@ -54,4 +52,6 @@ export default function CookieBanner({
       </Container>
     </Backdrop>
   );
-}
+};
+
+export default CookieBanner;

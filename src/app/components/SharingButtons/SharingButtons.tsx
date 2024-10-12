@@ -7,19 +7,15 @@ import sharingButtons from '@/app/data/sharingButtons';
 import { SharingButton } from '@/app/types';
 import NativeShareButton from './NativeShare';
 import isMobileDevice from '@/app/utils/isMobileDevice';
-import { useEffect, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
+import { SharingButtonProps } from './SharingButton.types';
 
-export default function SharingButtons({
+const SharingButtons: FC<SharingButtonProps> = ({
   heading,
   title,
   text,
   url,
-}: {
-  heading: string;
-  title: string;
-  text: string;
-  url: string;
-}): React.JSX.Element {
+}) => {
   const [canNativeShare, setCanNativeShare] = useState<boolean>(false);
 
   useEffect(() => {
@@ -56,4 +52,6 @@ export default function SharingButtons({
       </ul>
     </Container>
   );
-}
+};
+
+export default SharingButtons;

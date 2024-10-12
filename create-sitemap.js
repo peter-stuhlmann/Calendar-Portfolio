@@ -8,7 +8,7 @@ const productsFilePath = path.join(__dirname, '/src/app/data/products.tsx');
 const sitemapFilePath = path.join(__dirname, '/public/sitemap.xml');
 
 // URL of your website
-const baseUrl = 'https://example.com';
+const baseUrl = 'https://kalender.lol';
 
 // Function to create the sitemap
 const createSitemap = (products) => {
@@ -42,7 +42,7 @@ const createSitemap = (products) => {
     <lastmod>${formattedDate}</lastmod>
     <priority>0.5</priority>
     <image:image>
-      <image:loc>${baseUrl}/img/${product.id}_0.jpg</image:loc>
+      <image:loc>${baseUrl}/img/${product.year}/${product.id}_0.jpg</image:loc>
       <image:title>${product.title}</image:title>
       <image:caption>${product.shortDescription}</image:caption>
     </image:image>
