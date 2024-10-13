@@ -12,6 +12,7 @@ const GlobalStyles = createGlobalStyle`
     min-height: 100vh;
     overflow-x: hidden;
     font-family: var(--primary-font), sans-serif;
+    font-size: 16px;
 
     @media print {
       background-color: transparent;

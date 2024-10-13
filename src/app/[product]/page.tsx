@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import dynamic from 'next/dynamic';
 
 import products from '../data/products';
 import monthNames from '../data/monthNames';
@@ -19,11 +20,14 @@ import MainSlider from '../components/MainSlider';
 import Note from '../components/Note';
 import NotFound from '../components/NotFound';
 
-export default function Detailpage({
-  params,
-}: {
-  params: { product: string };
-}): React.JSX.Element {
+const PdfDownloadLink = dynamic(
+  () => import('../components/product-pdf-layout'),
+  {
+    ssr: false,
+  }
+);
+
+const Detailpage = ({ params }: { params: { product: string } }) => {
   const product =
     products.find((product: Product) => product.slug === params.product) ||
     null;
@@ -79,6 +83,7 @@ export default function Detailpage({
           />
         )}
         {product && <VariantsTable variants={product.variants} />}
+        {product && <PdfDownloadLink data={product} />}
         {product && (
           <SharingButtons
             heading="Teile diesen Kalender"
@@ -91,4 +96,6 @@ export default function Detailpage({
       </div>
     </Container>
   );
-}
+};
+
+export default Detailpage;

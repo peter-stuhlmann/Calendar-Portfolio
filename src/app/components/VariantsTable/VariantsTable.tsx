@@ -2,19 +2,17 @@ import Link from 'next/link';
 import { FC } from 'react';
 
 import { Container } from './VariantsTable.styles';
+import { VariantsTableProps } from './VariantsTable.types';
+
 import { Variant } from '@/app/types';
 import ExternalLink from '../icons/ExternalLink';
 import formatISBN from '@/app/utils/formatISBN';
-import { VariantsTableProps } from './VariantsTable.types';
+import formatPrice from '@/app/utils/formatPrice';
 
 const PARTNER_TAG = process.env.NEXT_PUBLIC_PARTNER_TAG;
 const THALIA_AFFILIATE_LINK = process.env.NEXT_PUBLIC_THALIA_AFFILIATE_LINK;
 
 const VariantsTable: FC<VariantsTableProps> = ({ variants }) => {
-  const price = (price: number) => {
-    return price.toString().replace('.', ',');
-  };
-
   function getDinFormat(size: string) {
     const normalizedSize = size.toLowerCase();
 
@@ -53,7 +51,7 @@ const VariantsTable: FC<VariantsTableProps> = ({ variants }) => {
             </div>
             <div aria-label="Preis">
               <span aria-hidden="true">Preis:</span>
-              {variant.price && <>{price(variant.price)} EUR*</>}
+              {variant.price && <>{formatPrice(variant.price)} EUR*</>}
             </div>
             <div aria-label="ISBN">
               <span aria-hidden="true">ISBN:</span>
